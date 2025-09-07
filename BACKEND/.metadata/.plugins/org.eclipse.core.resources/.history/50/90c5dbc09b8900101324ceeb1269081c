@@ -1,0 +1,2 @@
+spring.application.name=Employee
+server.port=2222

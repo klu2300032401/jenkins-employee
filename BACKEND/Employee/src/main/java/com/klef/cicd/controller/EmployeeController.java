@@ -1,0 +1,69 @@
+package com.klef.cicd.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import com.klef.cicd.entity.Employee;
+import com.klef.cicd.service.EmployeeService;
+
+@RestController
+@RequestMapping("/employeeapi")
+@CrossOrigin(origins = "*")
+public class EmployeeController {
+
+    @Autowired
+    private EmployeeService employeeService;
+
+    @GetMapping("/")
+    public String home() {
+        return "Employee Management System - Spring Boot API";
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
+        Employee savedEmployee = employeeService.addEmployee(employee);
+        return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Employee>> getAllEmployees() {
+        List<Employee> employees = employeeService.getAllEmployees();
+        return new ResponseEntity<>(employees, HttpStatus.OK);
+    }
+
+    @GetMapping("/get/{id}")
+    public ResponseEntity<?> getEmployeeById(@PathVariable int id) {
+        Employee employee = employeeService.getEmployeeById(id);
+        if (employee != null) {
+            return new ResponseEntity<>(employee, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Employee with ID " + id + " not found.", HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<?> updateEmployee(@RequestBody Employee employee) {
+        Employee existing = employeeService.getEmployeeById(employee.getId());
+        if (existing != null) {
+            Employee updatedEmployee = employeeService.updateEmployee(employee);
+            return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Cannot update. Employee with ID " + employee.getId() + " not found.", HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteEmployee(@PathVariable int id) {
+        Employee existing = employeeService.getEmployeeById(id);
+        if (existing != null) {
+            employeeService.deleteEmployeeById(id);
+            return new ResponseEntity<>("Employee with ID " + id + " deleted successfully.", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Cannot delete. Employee with ID " + id + " not found.", HttpStatus.NOT_FOUND);
+        }
+    }
+}

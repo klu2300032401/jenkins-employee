@@ -1,0 +1,5 @@
+package com.klef.cicd.entity;
+
+public class Employee {
+
+}
