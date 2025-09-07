@@ -1,4 +1,4 @@
 const config={
-    url :"http://localhost:2030/employee-backend/employeeapi/"
+    url :"http://localhost:2222"
 }
 export default config;
