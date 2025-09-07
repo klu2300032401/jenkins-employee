@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<packaging>war</packaging>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -12,9 +11,10 @@
 	<groupId>com.klef.cicd</groupId>
 	<artifactId>Employee</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>Employee</name>
 	<description>Demo project for Spring Boot</description>
-	
+	<packaging></packaging>
 	<url/>
 	<licenses>
 		<license/>
@@ -65,7 +65,6 @@
 	</dependencies>
 
 	<build>
-	<finalName>employee-backend</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

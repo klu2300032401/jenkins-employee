@@ -12,6 +12,7 @@
 	<groupId>com.klef.cicd</groupId>
 	<artifactId>Employee</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>Employee</name>
 	<description>Demo project for Spring Boot</description>
 	
@@ -65,7 +66,6 @@
 	</dependencies>
 
 	<build>
-	<finalName>employee-backend</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
