@@ -65,7 +65,6 @@
 	</dependencies>
 
 	<build>
-	<finalName>employee-backend</finalName>
 	
 		<plugins>
 			<plugin>

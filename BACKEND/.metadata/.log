@@ -3226,3 +3226,15 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: start tag u
 
 !ENTRY org.springframework.tooling.boot.ls 1 0 2025-09-07 15:59:52.445
 !MESSAGE Boot project ADDED: Employee
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-09-07 16:18:11.005
+!MESSAGE Classpath changed for project: Employee
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-09-07 16:18:12.704
+!MESSAGE Classpath changed for project: Employee
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-09-07 16:19:40.479
+!MESSAGE Classpath changed for project: Employee
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-09-07 16:19:42.038
+!MESSAGE Classpath changed for project: Employee
